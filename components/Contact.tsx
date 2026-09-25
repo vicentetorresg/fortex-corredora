@@ -1,9 +1,86 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+
+const insuranceTypes = [
+  "Seguro Vehículos",
+  "Seguro Incendio",
+  "Todo Riesgo Construcción",
+  "Responsabilidad Civil",
+  "Seguros de Vida y Salud",
+  "Garantías y Boletas",
+  "Otro",
+];
+
+function CustomSelect({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className={`w-full px-4 py-3 rounded-lg bg-white border text-left text-sm transition-all flex items-center justify-between gap-2 ${
+          open
+            ? "border-gold-400 ring-2 ring-gold-400/50"
+            : "border-navy-200 hover:border-navy-300"
+        } ${value ? "text-navy-700" : "text-navy-300"}`}
+      >
+        <span>{value || "Seleccione un tipo de seguro"}</span>
+        <svg
+          className={`w-4 h-4 text-navy-400 transition-transform flex-shrink-0 ${open ? "rotate-180" : ""}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute z-20 mt-1.5 w-full bg-white border border-navy-200 rounded-xl shadow-xl shadow-navy-900/10 py-1.5 max-h-64 overflow-auto">
+          {insuranceTypes.map((type) => (
+            <button
+              key={type}
+              type="button"
+              onClick={() => {
+                onChange(type);
+                setOpen(false);
+              }}
+              className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
+                value === type
+                  ? "bg-gold-50 text-gold-700 font-medium"
+                  : "text-navy-600 hover:bg-navy-50"
+              }`}
+            >
+              {type}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [selectedType, setSelectedType] = useState("");
 
   return (
     <section id="contacto" className="py-24 sm:py-32 bg-white">
@@ -95,6 +172,8 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      autoComplete="name"
                       required
                       className="w-full px-4 py-3 rounded-lg bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-all text-sm"
                       placeholder="Su nombre completo"
@@ -106,6 +185,8 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      name="organization"
+                      autoComplete="organization"
                       className="w-full px-4 py-3 rounded-lg bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-all text-sm"
                       placeholder="Nombre de su empresa"
                     />
@@ -119,6 +200,8 @@ export default function Contact() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      autoComplete="email"
                       required
                       className="w-full px-4 py-3 rounded-lg bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-all text-sm"
                       placeholder="correo@empresa.cl"
@@ -130,6 +213,8 @@ export default function Contact() {
                     </label>
                     <input
                       type="tel"
+                      name="phone"
+                      autoComplete="tel"
                       className="w-full px-4 py-3 rounded-lg bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-all text-sm"
                       placeholder="+56 9 1234 5678"
                     />
@@ -140,22 +225,7 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-navy-700 mb-1.5">
                     Tipo de Seguro
                   </label>
-                  <select
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-navy-200 text-navy-700 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-all text-sm"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Seleccione un tipo de seguro
-                    </option>
-                    <option>Seguro Vehículos</option>
-                    <option>Seguro Incendio</option>
-                    <option>Todo Riesgo Construcción</option>
-                    <option>Responsabilidad Civil</option>
-                    <option>Seguros de Vida y Salud</option>
-                    <option>Garantías y Boletas</option>
-                    <option>Otro</option>
-                  </select>
+                  <CustomSelect value={selectedType} onChange={setSelectedType} />
                 </div>
 
                 <div>
@@ -163,6 +233,7 @@ export default function Contact() {
                     Mensaje
                   </label>
                   <textarea
+                    name="message"
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-all text-sm resize-none"
                     placeholder="Cuéntenos sobre lo que necesita asegurar..."
@@ -171,7 +242,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 text-sm font-semibold text-navy-700 bg-gradient-to-r from-gold-400 to-gold-600 rounded-lg hover:from-gold-300 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-600/20"
+                  className="w-full py-3.5 text-sm font-semibold text-navy-700 bg-gradient-to-r from-gold-400 to-gold-600 rounded-lg hover:from-gold-300 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-600/20 cursor-pointer"
                 >
                   Enviar Solicitud
                 </button>

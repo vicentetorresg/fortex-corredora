@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-navy-700/95 glass shadow-lg shadow-navy-950/20"
+          ? "bg-white/95 glass shadow-lg shadow-navy-950/5 border-b border-navy-100/50"
           : "bg-transparent"
       }`}
     >
@@ -47,7 +47,7 @@ export default function Navbar() {
               <a
                 key={href}
                 href={href}
-                className="text-sm font-medium text-white/80 hover:text-gold-300 transition-colors duration-300"
+                className="text-sm font-medium text-navy-500 hover:text-gold-600 transition-colors duration-300"
               >
                 {label}
               </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-white/80 hover:text-gold-300 p-2"
+            className="md:hidden text-navy-500 hover:text-gold-600 p-2"
             aria-label="Menú"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -79,14 +79,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-navy-800/98 glass border-t border-gold-600/20">
+        <div className="md:hidden bg-white/98 glass border-t border-navy-100">
           <div className="px-4 py-6 space-y-4">
             {links.map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="block text-base font-medium text-white/80 hover:text-gold-300 transition-colors"
+                className="block text-base font-medium text-navy-600 hover:text-gold-600 transition-colors"
               >
                 {label}
               </a>
