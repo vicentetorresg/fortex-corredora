@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-50: #eef1f7;
+  --color-navy-100: #d5dbe8;
+  --color-navy-200: #a8b4cf;
+  --color-navy-300: #7b8db6;
+  --color-navy-400: #4e669d;
+  --color-navy-500: #2d4170;
+  --color-navy-600: #253660;
+  --color-navy-700: #1B2A4E;
+  --color-navy-800: #141f3a;
+  --color-navy-900: #0d1426;
+  --color-navy-950: #080c17;
+
+  --color-gold-50: #fdf8ed;
+  --color-gold-100: #f9edcf;
+  --color-gold-200: #F3E1A6;
+  --color-gold-300: #E4C77E;
+  --color-gold-400: #D4AD56;
+  --color-gold-500: #B8903F;
+  --color-gold-600: #9A7535;
+  --color-gold-700: #8E6B2C;
+  --color-gold-800: #6B5021;
+  --color-gold-900: #483616;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gold gradient text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #9A7535 0%, #E4C77E 35%, #F3E1A6 55%, #B8903F 80%, #8E6B2C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold gradient border */
+.border-gradient-gold {
+  border-image: linear-gradient(135deg, #9A7535 0%, #E4C77E 35%, #F3E1A6 55%, #B8903F 80%, #8E6B2C 100%) 1;
+}
+
+/* Subtle gold line */
+.gold-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #E4C77E, transparent);
+}
+
+/* Card hover effect */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(154, 117, 53, 0.15);
+}
+
+/* Glass effect */
+.glass {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Prose for legal pages */
+.prose-legal h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1B2A4E;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-legal p {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.prose-legal ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-legal li {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 0.25rem;
+}
+.prose-legal a {
+  color: #9A7535;
+  text-decoration: underline;
+}
+.prose-legal a:hover {
+  color: #E4C77E;
+}
