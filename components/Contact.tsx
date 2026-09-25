@@ -240,24 +240,32 @@ export default function Contact() {
                   />
                 </div>
 
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    name="accept_terms"
+                    required
+                    className="mt-0.5 w-4 h-4 rounded border-navy-300 text-gold-600 focus:ring-gold-400/50 accent-gold-600 cursor-pointer"
+                  />
+                  <span className="text-xs text-navy-400 leading-relaxed">
+                    Acepto los{" "}
+                    <a href="/terminos" target="_blank" className="text-gold-600 hover:underline font-medium">
+                      términos y condiciones
+                    </a>{" "}
+                    y la{" "}
+                    <a href="/privacidad" target="_blank" className="text-gold-600 hover:underline font-medium">
+                      política de privacidad
+                    </a>
+                    , y autorizo el tratamiento de mis datos personales conforme a la Ley N° 19.628.
+                  </span>
+                </label>
+
                 <button
                   type="submit"
                   className="w-full py-3.5 text-sm font-semibold text-navy-700 bg-gradient-to-r from-gold-400 to-gold-600 rounded-lg hover:from-gold-300 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-600/20 cursor-pointer"
                 >
                   Enviar Solicitud
                 </button>
-
-                <p className="text-xs text-navy-300 text-center">
-                  Al enviar, acepta nuestros{" "}
-                  <a href="/terminos" className="text-gold-600 hover:underline">
-                    términos y condiciones
-                  </a>{" "}
-                  y{" "}
-                  <a href="/privacidad" className="text-gold-600 hover:underline">
-                    política de privacidad
-                  </a>
-                  .
-                </p>
               </form>
             )}
           </div>
