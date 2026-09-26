@@ -33,8 +33,9 @@ export default function Terminos() {
           <p>
             Este sitio web es operado por{" "}
             <strong>Fortex Corredora de Seguros SpA</strong>, RUT 78.452.756-5,
-            con domicilio en Apoquindo 6410, Of. 1404, Las Condes, Santiago,
-            Chile. Corredora de seguros registrada y fiscalizada por la{" "}
+            Código CMF N° 10275, con domicilio en Apoquindo 6410, Of. 1404,
+            Las Condes, Santiago, Chile. Corredora de seguros registrada y
+            fiscalizada por la{" "}
             <strong>Comisión para el Mercado Financiero (CMF)</strong>.
           </p>
 

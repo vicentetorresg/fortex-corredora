@@ -77,7 +77,7 @@ export default function Footer() {
             </p>
             <p>
               Seguros intermediados por Fortex Corredora de Seguros SpA.
-              Corredora registrada ante la CMF. Todos los derechos reservados.
+              Corredora registrada ante la CMF — Código N° 10275. Todos los derechos reservados.
             </p>
           </div>
           <a

@@ -48,7 +48,7 @@ export default function Contact() {
             },
             {
               label: "Empresa",
-              value: "Fortex Corredora de Seguros SpA\nRUT 78.452.756-5",
+              value: "Fortex Corredora de Seguros SpA\nRUT 78.452.756-5 · CMF N° 10275",
             },
           ].map(({ label, value }) => (
             <div key={label} className="text-center">
