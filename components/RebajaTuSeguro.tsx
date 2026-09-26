@@ -19,7 +19,7 @@ export default function RebajaTuSeguro() {
                 height={36}
                 className="h-8 sm:h-9 w-auto"
               />
-              <p className="text-[10px] text-white/30 mt-1 tracking-wide">Una empresa de Fortex</p>
+              <p className="text-[10px] text-white/70 font-bold mt-1 tracking-wide">Una empresa de Fortex</p>
             </div>
             <div className="h-px sm:h-10 w-12 sm:w-px bg-white/10 flex-shrink-0" />
             <p className="text-sm text-white/60 text-center sm:text-left leading-relaxed">
