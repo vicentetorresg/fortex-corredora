@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="nosotros" className="py-24 sm:py-32 bg-navy-700 relative overflow-hidden">
+    <section id="nosotros" className="py-16 sm:py-24 lg:py-32 bg-navy-700 relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(228,199,126,0.06)_0%,_transparent_50%)]" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-600/30 to-transparent" />
@@ -12,7 +12,7 @@ export default function About() {
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-400">
               Quiénes Somos
             </span>
-            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+            <h2 className="mt-4 font-display text-2xl sm:text-3xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
               Una corredora con{" "}
               <span className="text-gradient-gold">visión estratégica</span>
             </h2>

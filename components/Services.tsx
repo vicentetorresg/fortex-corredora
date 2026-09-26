@@ -64,13 +64,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicios" className="py-24 sm:py-32 bg-white">
+    <section id="servicios" className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600">
             Nuestros Servicios
           </span>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-700 tracking-tight">
+          <h2 className="mt-4 font-display text-2xl sm:text-3xl lg:text-5xl font-bold text-navy-700 tracking-tight">
             Soluciones de seguros
             <br />
             <span className="text-gradient-gold">a la medida de su empresa</span>
@@ -81,7 +81,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service) => (
             <div
               key={service.title}

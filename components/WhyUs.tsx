@@ -57,13 +57,13 @@ const features = [
 
 export default function WhyUs() {
   return (
-    <section id="por-que-elegirnos" className="py-24 sm:py-32 bg-gradient-to-b from-white to-navy-50/50">
+    <section id="por-que-elegirnos" className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white to-navy-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600">
             Diferenciadores
           </span>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-700 tracking-tight">
+          <h2 className="mt-4 font-display text-2xl sm:text-3xl lg:text-5xl font-bold text-navy-700 tracking-tight">
             ¿Por qué elegir Fortex?
           </h2>
           <p className="mt-4 text-lg text-navy-400">

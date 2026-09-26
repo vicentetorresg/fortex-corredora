@@ -1,11 +1,11 @@
 export default function Contact() {
   return (
-    <section id="contacto" className="py-24 sm:py-32 bg-white">
+    <section id="contacto" className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600">
           Contacto
         </span>
-        <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-700 tracking-tight">
+        <h2 className="mt-4 font-display text-2xl sm:text-3xl lg:text-5xl font-bold text-navy-700 tracking-tight">
           ¿Necesitas asesoría?
         </h2>
         <p className="mt-4 text-lg text-navy-400 leading-relaxed max-w-2xl mx-auto">
