@@ -11,13 +11,16 @@ export default function RebajaTuSeguro() {
           className="group block rounded-2xl bg-navy-700 p-6 sm:p-8 hover:bg-navy-600 transition-colors duration-300"
         >
           <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-8">
-            <Image
-              src="/rebajatuseguro-logo-white.svg"
-              alt="Rebaja Tu Seguro"
-              width={180}
-              height={36}
-              className="h-8 sm:h-9 w-auto flex-shrink-0"
-            />
+            <div className="flex-shrink-0 text-center sm:text-left">
+              <Image
+                src="/rebajatuseguro-logo-white.svg"
+                alt="Rebaja Tu Seguro"
+                width={180}
+                height={36}
+                className="h-8 sm:h-9 w-auto"
+              />
+              <p className="text-[10px] text-white/30 mt-1 tracking-wide">Una empresa de Fortex</p>
+            </div>
             <div className="h-px sm:h-10 w-12 sm:w-px bg-white/10 flex-shrink-0" />
             <p className="text-sm text-white/60 text-center sm:text-left leading-relaxed">
               ¿Tienes un crédito con seguro asociado? Portamos tu seguro para
