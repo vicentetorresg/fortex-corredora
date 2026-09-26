@@ -13,15 +13,22 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Fortex Corredora de Seguros | Protección Patrimonial Integral",
+  title: "Fortex Corredora de Seguros | El seguro ideal para tu negocio",
   description:
-    "Fortex Corredora de Seguros SpA — Soluciones de seguros corporativos y personales. Protección patrimonial con respaldo, experiencia y confianza.",
+    "Fortex Corredora de Seguros SpA — Comparamos por ti en el mercado para encontrar la mejor opción. Asesoría profesional, independiente y sin costo.",
   keywords:
     "corredora de seguros, seguros Chile, seguros corporativos, seguros vehiculares, responsabilidad civil, seguros incendio, Fortex",
+  icons: {
+    icon: [
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Fortex Corredora de Seguros",
     description:
-      "Soluciones de seguros corporativos y personales con respaldo y confianza.",
+      "Comparamos por ti en el mercado para encontrar la mejor opción de seguros.",
     type: "website",
   },
 };
