@@ -22,7 +22,7 @@ export default function RebajaTuSeguro() {
               <p className="text-[10px] text-white/70 font-bold mt-1 tracking-wide">Una empresa de Fortex</p>
             </div>
             <div className="h-px sm:h-10 w-12 sm:w-px bg-white/10 flex-shrink-0" />
-            <p className="text-sm text-white/60 text-center sm:text-left leading-relaxed">
+            <p className="text-sm font-semibold text-white/90 text-center sm:text-left leading-relaxed">
               ¿Tienes un crédito con seguro asociado? Portamos tu seguro para
               que pagues menos cada mes, sin perder cobertura.
             </p>
