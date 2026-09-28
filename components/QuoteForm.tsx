@@ -82,7 +82,7 @@ export default function QuoteForm({ id }: { id?: string }) {
   const canNext3 = nombre && telefono && email && acepta;
 
   return (
-    <div id={id} className="bg-white border border-navy-200 rounded-2xl shadow-xl shadow-navy-900/5 p-5 sm:p-8">
+    <div id={id} className="bg-white border border-navy-200 rounded-2xl shadow-xl shadow-navy-900/5 p-5 sm:p-8 overflow-visible">
       {enviado ? (
         <div className="flex flex-col items-center justify-center text-center py-8 sm:py-10">
           <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-4">
@@ -198,38 +198,50 @@ export default function QuoteForm({ id }: { id?: string }) {
                 <p className="text-sm text-navy-400 mt-1">Te enviaremos tu cotización por email o WhatsApp.</p>
               </div>
 
-              <input
-                type="text"
-                name="name"
-                autoComplete="name"
-                required
-                value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
-                className="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all text-sm"
-                placeholder="Tu nombre"
-              />
+              <div>
+                <label htmlFor="nombre" className="block text-xs font-medium text-navy-500 mb-1.5">Nombre *</label>
+                <input
+                  id="nombre"
+                  type="text"
+                  name="name"
+                  autoComplete="name"
+                  required
+                  value={nombre}
+                  onChange={(e) => setNombre(e.target.value)}
+                  className="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all text-sm"
+                  placeholder="Ej: Juan Pérez"
+                />
+              </div>
 
-              <input
-                type="tel"
-                name="phone"
-                autoComplete="tel"
-                required
-                value={telefono}
-                onChange={(e) => setTelefono(e.target.value)}
-                className="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all text-sm"
-                placeholder="Teléfono (WhatsApp)"
-              />
+              <div>
+                <label htmlFor="telefono" className="block text-xs font-medium text-navy-500 mb-1.5">Teléfono (WhatsApp) *</label>
+                <input
+                  id="telefono"
+                  type="tel"
+                  name="phone"
+                  autoComplete="tel"
+                  required
+                  value={telefono}
+                  onChange={(e) => setTelefono(e.target.value)}
+                  className="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all text-sm"
+                  placeholder="+56 9 1234 5678"
+                />
+              </div>
 
-              <input
-                type="email"
-                name="email"
-                autoComplete="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all text-sm"
-                placeholder="Correo electrónico"
-              />
+              <div>
+                <label htmlFor="email" className="block text-xs font-medium text-navy-500 mb-1.5">Correo electrónico *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-white border border-navy-200 text-navy-700 placeholder:text-navy-300 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all text-sm"
+                  placeholder="correo@empresa.cl"
+                />
+              </div>
 
               <label className="flex items-start gap-3 cursor-pointer">
                 <input

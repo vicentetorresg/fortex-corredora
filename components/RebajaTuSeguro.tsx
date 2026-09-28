@@ -8,7 +8,7 @@ export default function RebajaTuSeguro() {
           href="https://www.rebajatuseguro.cl"
           target="_blank"
           rel="noopener noreferrer"
-          className="group block rounded-2xl bg-navy-700 p-6 sm:p-8 hover:bg-navy-600 transition-colors duration-300"
+          className="group block rounded-2xl bg-navy-700 p-6 sm:p-8 hover:bg-navy-600 transition-colors duration-300 cursor-pointer"
         >
           <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-8">
             <div className="flex-shrink-0 text-center sm:text-left">

@@ -1,3 +1,7 @@
+"use client";
+
+import { useReveal } from "@/hooks/useReveal";
+
 const services = [
   {
     icon: (
@@ -63,10 +67,12 @@ const services = [
 ];
 
 export default function Services() {
+  const { ref, visible } = useReveal();
+
   return (
     <section id="servicios" className="py-16 sm:py-24 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto">
+      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600">
             Nuestros Servicios
           </span>
@@ -82,10 +88,12 @@ export default function Services() {
         </div>
 
         <div className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {services.map((service) => (
-            <div
+          {services.map((service, i) => (
+            <a
               key={service.title}
-              className="service-card group relative p-8 rounded-2xl bg-navy-50/50 border border-navy-100/80 hover:bg-white hover:border-gold-200"
+              href="#contacto"
+              className={`service-card group relative p-8 rounded-2xl bg-navy-50/50 border border-navy-100/80 hover:bg-white hover:border-gold-200 cursor-pointer block transition-all duration-500 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              style={{ transitionDelay: visible ? `${200 + i * 100}ms` : "0ms" }}
             >
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-700 shadow-lg shadow-gold-500/20 group-hover:shadow-gold-500/30 transition-shadow">
                 {service.icon}
@@ -102,7 +110,7 @@ export default function Services() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

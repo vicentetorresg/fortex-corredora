@@ -1,12 +1,17 @@
+"use client";
+
+import { useReveal } from "@/hooks/useReveal";
 import QuoteForm from "./QuoteForm";
 
 export default function BottomCTA() {
+  const { ref, visible } = useReveal();
+
   return (
     <section className="py-16 sm:py-24 bg-navy-50/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left */}
-          <div>
+          <div className={`transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-700 tracking-tight leading-tight">
               Cotiza tu seguro
               <br />
@@ -49,7 +54,9 @@ export default function BottomCTA() {
           </div>
 
           {/* Right - Form */}
-          <QuoteForm id="cotizar-abajo" />
+          <div className={`transition-all duration-700 delay-200 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+            <QuoteForm id="cotizar-abajo" />
+          </div>
         </div>
       </div>
     </section>

@@ -47,14 +47,14 @@ export default function Navbar() {
               <a
                 key={href}
                 href={href}
-                className="text-sm font-medium text-navy-500 hover:text-gold-600 transition-colors duration-300"
+                className="text-sm font-medium text-navy-500 hover:text-gold-600 transition-colors duration-300 cursor-pointer"
               >
                 {label}
               </a>
             ))}
             <a
               href="#contacto"
-              className="ml-2 px-6 py-2.5 text-sm font-semibold text-navy-700 bg-gradient-to-r from-gold-400 to-gold-600 rounded-lg hover:from-gold-300 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-600/20"
+              className="ml-2 px-6 py-2.5 text-sm font-semibold text-navy-700 bg-gradient-to-r from-gold-400 to-gold-600 rounded-lg hover:from-gold-300 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-600/20 cursor-pointer"
             >
               Cotizar Ahora
             </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-navy-500 hover:text-gold-600 p-2"
+            className="md:hidden text-navy-500 hover:text-gold-600 p-2.5 -mr-2.5 cursor-pointer"
             aria-label="Menú"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -78,9 +78,12 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-white/98 glass border-t border-navy-100">
-          <div className="px-4 py-6 space-y-4">
+      <div
+        className={`md:hidden bg-white/98 glass border-t border-navy-100 overflow-hidden transition-all duration-300 ease-out ${
+          open ? "max-h-80 opacity-100" : "max-h-0 opacity-0 border-t-transparent"
+        }`}
+      >
+        <div className="px-4 py-6 space-y-4">
             {links.map(({ href, label }) => (
               <a
                 key={href}
@@ -98,9 +101,8 @@ export default function Navbar() {
             >
               Cotizar Ahora
             </a>
-          </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

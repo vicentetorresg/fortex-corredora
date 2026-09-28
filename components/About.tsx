@@ -1,14 +1,19 @@
+"use client";
+
+import { useReveal } from "@/hooks/useReveal";
+
 export default function About() {
+  const { ref, visible } = useReveal();
+
   return (
     <section id="nosotros" className="py-16 sm:py-24 lg:py-32 bg-navy-700 relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(228,199,126,0.06)_0%,_transparent_50%)]" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-600/30 to-transparent" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Content */}
-          <div>
+          <div className={`transition-all duration-700 ease-out ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-400">
               Quiénes Somos
             </span>
@@ -46,7 +51,7 @@ export default function About() {
           </div>
 
           {/* Right - Values */}
-          <div className="space-y-6">
+          <div className={`space-y-6 transition-all duration-700 delay-200 ease-out ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
             {[
               {
                 number: "01",

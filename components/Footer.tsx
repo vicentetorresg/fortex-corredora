@@ -14,7 +14,7 @@ export default function Footer() {
               height={50}
               className="h-12 w-auto mb-4"
             />
-            <p className="text-sm text-white/40 leading-relaxed max-w-xs">
+            <p className="text-sm text-white/90 leading-relaxed max-w-xs">
               Soluciones de seguros corporativos y personales con respaldo,
               experiencia y confianza.
             </p>
@@ -26,7 +26,7 @@ export default function Footer() {
               <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-400 mb-4">
                 Servicios
               </h4>
-              <ul className="space-y-2.5 text-sm text-white/50">
+              <ul className="space-y-2.5 text-sm text-white/90">
                 <li><a href="#servicios" className="hover:text-gold-300 transition-colors">Vehículos</a></li>
                 <li><a href="#servicios" className="hover:text-gold-300 transition-colors">Incendio</a></li>
                 <li><a href="#servicios" className="hover:text-gold-300 transition-colors">Construcción</a></li>
@@ -39,7 +39,7 @@ export default function Footer() {
               <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-400 mb-4">
                 Empresa
               </h4>
-              <ul className="space-y-2.5 text-sm text-white/50">
+              <ul className="space-y-2.5 text-sm text-white/90">
                 <li><a href="#nosotros" className="hover:text-gold-300 transition-colors">Nosotros</a></li>
                 <li><a href="#contacto" className="hover:text-gold-300 transition-colors">Contacto</a></li>
                 <li><a href="/terminos" className="hover:text-gold-300 transition-colors">Términos y Condiciones</a></li>
@@ -53,7 +53,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gold-400 mb-4">
               Contacto
             </h4>
-            <ul className="space-y-2.5 text-sm text-white/50">
+            <ul className="space-y-2.5 text-sm text-white/90">
               <li>Apoquindo 6410, Of. 1404</li>
               <li>Las Condes, Santiago, Chile</li>
               <li className="pt-2">
@@ -70,7 +70,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-xs text-white/30 text-center sm:text-left space-y-0.5">
+          <div className="text-xs text-white/80 text-center sm:text-left space-y-0.5">
             <p>
               &copy; {new Date().getFullYear()} Fortex Corredora de Seguros SpA
               — RUT 78.452.756-5
@@ -82,7 +82,7 @@ export default function Footer() {
           </div>
           <a
             href="/terminos"
-            className="text-xs text-white/30 hover:text-gold-400 transition-colors"
+            className="text-xs text-white/80 hover:text-gold-400 transition-colors"
           >
             Código de conducta CMF
           </a>

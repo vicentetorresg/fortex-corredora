@@ -1,3 +1,8 @@
+"use client";
+
+import { useReveal } from "@/hooks/useReveal";
+import LogoCarousel from "./LogoCarousel";
+
 const features = [
   {
     icon: (
@@ -56,10 +61,12 @@ const features = [
 ];
 
 export default function WhyUs() {
+  const { ref, visible } = useReveal();
+
   return (
     <section id="por-que-elegirnos" className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white to-navy-50/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto">
+      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gold-600">
             Diferenciadores
           </span>
@@ -73,8 +80,12 @@ export default function WhyUs() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature) => (
-            <div key={feature.title} className="flex gap-4">
+          {features.map((feature, i) => (
+            <div
+              key={feature.title}
+              className={`flex gap-4 transition-all duration-500 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: visible ? `${200 + i * 80}ms` : "0ms" }}
+            >
               <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-navy-700 flex items-center justify-center text-gold-400">
                 {feature.icon}
               </div>
@@ -90,28 +101,8 @@ export default function WhyUs() {
           ))}
         </div>
 
-        {/* Logos strip */}
-        <div className="mt-20 pt-12 border-t border-navy-100">
-          <p className="text-center text-xs font-medium tracking-[0.15em] uppercase text-navy-300 mb-8">
-            Trabajamos con las principales aseguradoras del mercado
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 text-navy-200">
-            {[
-              "Mapfre",
-              "HDI Seguros",
-              "Zurich",
-              "Liberty",
-              "BCI Seguros",
-              "Sura",
-              "Chubb",
-              "Consorcio",
-            ].map((name) => (
-              <span key={name} className="text-sm font-semibold tracking-wide">
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
+        {/* Logos carousel */}
+        <LogoCarousel />
       </div>
     </section>
   );
