@@ -153,7 +153,7 @@ export default function QuoteForm({ id }: { id?: string }) {
             <div className="space-y-4 sm:space-y-5">
               <div>
                 <h3 className="text-base sm:text-lg font-bold text-navy-700">Cuéntanos un poco más</h3>
-                <p className="text-sm text-navy-400 mt-1">Opcional: agrega detalles para una cotización más precisa.</p>
+                <p className="text-sm text-navy-400 mt-1">Agrega detalles para una cotización más precisa.</p>
               </div>
 
               <div className="p-3 rounded-lg bg-navy-50 text-sm text-navy-600">
@@ -178,8 +178,9 @@ export default function QuoteForm({ id }: { id?: string }) {
                 </button>
                 <button
                   type="button"
+                  disabled={!detalle.trim()}
                   onClick={() => setStep(3)}
-                  className="flex-1 py-3 sm:py-3.5 text-sm font-semibold text-navy-700 bg-gradient-to-r from-gold-400 to-gold-600 rounded-xl hover:from-gold-300 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-600/20 cursor-pointer"
+                  className="flex-1 py-3 sm:py-3.5 text-sm font-semibold text-navy-700 bg-gradient-to-r from-gold-400 to-gold-600 rounded-xl hover:from-gold-300 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-600/20 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
                 >
                   Continuar
                 </button>
