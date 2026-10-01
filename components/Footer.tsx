@@ -8,11 +8,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="/fortex-logo.png"
+              src="/fortex-logo.svg"
               alt="Fortex Corredora de Seguros"
               width={160}
               height={50}
-              className="h-12 w-auto mb-4"
+              className="h-12 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-sm text-white/90 leading-relaxed max-w-xs">
               Soluciones de seguros corporativos y personales con respaldo,

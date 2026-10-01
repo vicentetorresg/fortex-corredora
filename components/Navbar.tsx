@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <a href="#" className="flex items-center gap-3">
             <Image
-              src="/fortex-logo.png"
+              src="/fortex-logo.svg"
               alt="Fortex Corredora de Seguros"
               width={180}
               height={60}
