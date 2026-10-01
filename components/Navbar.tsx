@@ -36,7 +36,7 @@ export default function Navbar() {
               alt="Fortex Corredora de Seguros"
               width={180}
               height={60}
-              className="h-14 w-auto"
+              className="h-20 w-auto"
               priority
             />
           </a>
